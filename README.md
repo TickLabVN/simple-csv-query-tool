@@ -23,11 +23,11 @@ In this example, the `exql` program will read the `data.csv` file and execute th
 
 To make it easier, we can assume that CSV files is always a table `M`x`N + 1`, with the first row contains column names, `M` is number of columns and `N` rows of data. All column names have [`snake_case`](https://en.wikipedia.org/wiki/Snake_case) format. For instance:
 
-| id | first_name | last_name |
-|---|---|---|
-| #1 | Vinh | Nguyen Phuc |
-| #2 | Quan | Nguyen Hong |
-| #1 | Phu  | Nguyen Ngoc |
+| id | first_name | last_name | age | major
+|---|---|---|--|
+| #1 | Vinh | Nguyen Phuc | 22 | Computer Science |
+| #2 | Quan | Nguyen Hong | 20 | Computer Engineering |
+| #1 | Phu  | Nguyen Ngoc | 20 | Mechanical Engineering |
 
 ## Requirements
 
@@ -63,18 +63,18 @@ Best of luck, and enjoy building your "exql" CSV data query tool!
 
 ## Timelines
 
-Thử thách kéo dài trong 8 tuần (có thể ngắn hơn so với dự kiến, tùy thuộc vào ứng viên). Mô tả công việc từng tuần như sau
+The challenge will last for 8 weeks but may extend or conclude sooner based on your ability.
 
-- [Tuần 1](./timelines/week1.md): Cài đặt môi trường làm việc và tìm hiểu đề bài
-- [Tuần 2](./timelines/week2.md)
-- [Tuần 3](./timelines/week3.md)
-- [Tuần 4](./timelines/week4.md)
-- [Tuần 5](./timelines/week5.md)
-- [Tuần 6](./timelines/week6.md)
-- [Tuần 7](./timelines/week7.md)
-- [Tuần 8](./timelines/week8.md)
+- [Tuần 1](./timelines/week1.md): Set up working environment and find out more about this challenges
+- [Tuần 2](./timelines/week2.md): Comming soon ...
+- [Tuần 3](./timelines/week3.md): Comming soon ...
+- [Tuần 4](./timelines/week4.md): Comming soon ...
+- [Tuần 5](./timelines/week5.md): Comming soon ...
+- [Tuần 6](./timelines/week6.md): Comming soon ...
+- [Tuần 7](./timelines/week7.md): Comming soon ...
+- [Tuần 8](./timelines/week8.md): Comming soon ...
 
-## Tài liệu / từ khóa tham khảo (recommend)
+## Documents / Keywords
 
 - Learn CPP: <https://www.learncpp.com/>
 - CPP Roadmap for developers (advanced): <https://roadmap.sh/cpp>
