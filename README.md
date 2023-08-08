@@ -11,7 +11,6 @@ Bạn được yêu cầu hiện thực một hệ quản trị cơ sở dữ li
 2. **Yêu cầu**:
 - Thực thi chương trình trên hệ điều hành Linux.
 - Sử dụng C++ 17, compile bằng g++ theo standard cpp17.
-- Tuân thủ các nguyên tắc của OOP: Rule of zero, Rules of three, Rules of five
 - Chương trình luôn trong trạng thái sẵn sàng thực thi câu lệnh và chỉ kết thúc khi gặp lệnh `.exit`.  
 - Dữ liệu sau khi INSERT không bị mất đi khi kết thúc chương trình.  
 - Chương trình chạy không xảy ra memory leak.
@@ -31,8 +30,8 @@ Có tất cả 100 testcase được dùng để kiểm tra tính đúng đắn 
 
 |Tuần|Mục tiêu|Yêu cầu|
 |--|:--|--|
-|1|- Cài đặt hệ điều hành Linux và môi trường làm việc <br> - Tìm hiểu sơ lược về ngôn ngữ SQL<br> - Cài SQLite và chạy thử một vài chức năng | |
-|2|... | |
+|1|- Cài đặt hệ điều hành Linux và môi trường làm việc <br> - Tìm hiểu sơ lược về ngôn ngữ SQL<br> - Cài SQLite và chạy thử một vài chức năng<br> - Tìm hiểu kiến trúc của SQLite | |
+|2|- Chương trình nhận dạng được 2 key words `INSERT` và `SELECT`, lệnh kết thúc `.exit` và các lệnh không hợp lệ<br> - Có thể chèn row và in ra tất cả row trong 1 bảng với các field cố định<br> - Dữ liệu không bị mất khi kết thúc chương trình  | |
 
 ## Tài liệu tham khảo (recommend)
 
