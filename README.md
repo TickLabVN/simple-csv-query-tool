@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Greetings, collaborators! Welcome to an engaging programming challenge that will introduce you to the creation of a program capable of querying data from CSV files using the SQL query language. This task will not only enhance your programming skills but also provide insights into structured data manipulation.
+Greetings, collaborators ! Welcome to an engaging programming challenge that will introduce you to the creation of a program capable of querying data from CSV files using the SQL query language. This task will not only enhance your programming skills but also provide insights into structured data manipulation.
 
 ## Key Concepts
 
