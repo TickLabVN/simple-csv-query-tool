@@ -1,34 +1,65 @@
-# Truy vấn dữ liệu từ file CSV bằng SQL
+# Building the `exql` CSV Data Query Tool
 
-## Giới thiệu
-Khi sử dụng một hệ quản trị cơ sở dữ liệu (DBMS) nào đó, bạn có từng thắc mắc tại sao các DBMS lại có thể hiểu được các câu truy vấn như SELECT, INSERT,… để trả về kết quả đúng với ý muốn của người dùng, loại cấu trúc dữ liệu nào được các DBMS sử dụng để lưu trên bộ nhớ hay tại sao mỗi bảng chỉ có thể có một primary-key. Thử thách này sẽ giúp bạn nắm được các nguyên tắc cơ bản của ngôn ngữ truy vấn SQL và cách ngôn ngữ này được sử dụng trong các DBMS.
+## Introduction
 
-## Mô tả yêu cầu
+Greetings, collaborators! Welcome to an engaging programming challenge that will introduce you to the creation of a program capable of querying data from CSV files using the SQL query language. This task will not only enhance your programming skills but also provide insights into structured data manipulation.
 
-1. **Mô tả**:  
-Bạn được yêu cầu hiện thực một hệ quản trị cơ sở dữ liệu đơn giản chỉ với 2 câu truy vấn INSERT và SELECT.
-- Input là một file CSV gồm từ 10 - 15 cột. 
-- Output là thông tin từ các cột trong bảng đối với câu lệnh SELECT và thông báo thực thi thành công hay thất bại đối với câu lệnh INSERT.
+## Key Concepts
 
-2. **Yêu cầu**:
-- Thực thi chương trình trên hệ điều hành Linux.
-- Sử dụng C++ 17, compile bằng g++ theo standard cpp17.
-- Chương trình luôn trong trạng thái sẵn sàng thực thi câu lệnh và chỉ kết thúc khi gặp lệnh `.exit`.  
-- Dữ liệu sau khi INSERT không bị mất đi khi kết thúc chương trình.  
-- Chương trình chạy không xảy ra memory leak.
+Before we delve into the details, let's cover some important concepts:
 
-Có tất cả 100 testcase được dùng để kiểm tra tính đúng đắn của sản phẩm. 
+- **CSV (Comma-Separated Values)**: CSV is a simple file format used to store tabular data. Each row in the file corresponds to a row in the table, and data fields within each row are separated by commas.
+- **SQL (Structured Query Language)**: SQL is a powerful language used for managing and manipulating structured data in databases. It enables various operations like querying, inserting, updating, and deleting data.
 
-## Kiến thức đạt được sau khi hoàn thành thử thách
+## Your tasks
 
-- Thành thạo xử lý chuỗi
-- Hiểu và vận dụng tốt con trỏ
-- Nắm được sơ lược sự khác nhau giữa các ngôn ngữ lập trình bậc cao (C#, Java, Javascript, Python ...) và ngôn ngữ lập trình bậc thấp (C, C++, ...)
-- Hiểu các một chương trình hoạt động và chi tiết cách bộ nhớ được sử dụng
-- Nắm được ý tưởng về sự ra đời của các ngôn ngữ lập trình và cách ngôn ngữ lập trình hoạt động
-- Các principle trong lập trình C++ 
+Your task is to develop a program named `exql` that can read CSV files and execute **SQL-like** queries on the data within. When executed with a specific query and CSV file name as parameters, the program should display the queried data on the screen. Here's an example of usage:
 
-Ngoài ra, thử thách sẽ giúp người thực hiện mở rộng góc nhìn về thế giới lập trình.
+```bash
+exql "SELECT * FROM data.csv"
+```
+
+In this example, the `exql` program will read the `data.csv` file and execute the `SELECT *` query, fetching all data from the file. The program will then display the retrieved data on the terminal.
+
+To make it easier, we can assume that CSV files is always a table `M`x`N + 1`, with the first row contains column names, `M` is number of columns and `N` rows of data. All column names have [`snake_case`](https://en.wikipedia.org/wiki/Snake_case) format. For instance:
+
+| id | first_name | last_name |
+|---|---|---|
+| #1 | Vinh | Nguyen Phuc |
+| #2 | Quan | Nguyen Hong |
+| #1 | Phu  | Nguyen Ngoc |
+
+## Requirements
+
+Your program should have these components:
+
+- **Command-line interface**: The program should be run from the command line, accepting the CSV file name and SQL-like query as parameters.
+- **Query parsing**: Implement a mechanism to parse the provided query parameter. The program should understand basic SQL-like syntax, including `SELECT`/`INSERT` statements. `DELETE`/`UPDATE` statements are not required.
+- **CSV Reading**: Design the program to read and interpret CSV files. Assume that the CSV files are properly formatted and include header rows.
+- **Query Execution**: Process the query and retrieve appropriate data from the CSV file.
+
+The executable file `exql` must be:
+
+- Run and compiled on Linux operating system
+- Use C++ standard 17
+- NO MEMORY LEAKS after program exit
+- Pass all test cases
+
+## Learning Objectives
+
+Through this challenge, you will:
+
+- Learn the fundamentals of SQL and its application for data querying.
+- Enhance your programming skills by building a data manipulation tool.
+- Gain practical experience with I/O operations for reading and processing CSV files.
+- This assignment is designed to gradually introduce you to these concepts. If you are new to SQL or databases, don't worry - you'll have access to various resources and guidance to help you successfully complete the task.
+
+Furthermore, you will have ideas with:
+
+- The difference between high level programming languages (`C#`, `Java`, `Javascript`, `Python` ...) and low level ones (`C/C++`, `Rust` ...)
+- How computers understand programming/scripting languages
+
+Best of luck, and enjoy building your "exql" CSV data query tool!
 
 ## Timelines
 
