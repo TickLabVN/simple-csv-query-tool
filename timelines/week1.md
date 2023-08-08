@@ -9,4 +9,4 @@
   - Tạo tài khoản Github
   - VSCode hoặc Text Editor tùy ý
   - [Valgrind](https://valgrind.org/) để detech memory leak, hỗ trợ việc debug
-2. Tìm hiểu đề bài được đặc tả trong <>
+2. Tìm hiểu đề bài được đặc tả trong [README.md](../README.md)
