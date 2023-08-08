@@ -1,12 +1,13 @@
-# Tuần 1
+# Week 1
 
-## Mục tiêu
+## Goals
 
-1. Cài đặt môi trường làm việc
-  - Cài đặt hệ điều hành [Ubuntu](https://ubuntu.com/) (recommend phiên bản >= `22.04`)
+1. Set up working environment
+  - Install [Ubuntu](https://ubuntu.com/) (recommend versin >= 22.04) or other Linux distributions as your OS 
   - `gcc/g++` v11.4.0
-  - `git` version mới nhất
-  - Tạo tài khoản Github
-  - VSCode hoặc Text Editor tùy ý
-  - [Valgrind](https://valgrind.org/) để detech memory leak, hỗ trợ việc debug
-2. Tìm hiểu đề bài được đặc tả trong [README.md](../README.md)
+  - `git` latest version
+  - Create Github account
+  - Install a text editor like `VS Code`, `Atom` ... (depend on your choice)
+  - Install [Valgrind](https://valgrind.org/). This tool will help you detect memory leaks in your program
+2. Set up your own repository on Github to store solution for this challenge.
+3. Read the challenge described in [README.md](../README.md) carefully.
