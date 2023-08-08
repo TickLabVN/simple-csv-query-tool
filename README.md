@@ -11,6 +11,7 @@ Bạn được yêu cầu hiện thực một hệ quản trị cơ sở dữ li
 2. **Yêu cầu**:
 - Thực thi chương trình trên hệ điều hành Linux.
 - Sử dụng C++ 17, compile bằng g++ theo standard cpp17.
+- Tuân thủ các nguyên tắc của OOP: Rule of zero, Rules of three, Rules of five
 - Chương trình luôn trong trạng thái sẵn sàng thực thi câu lệnh và chỉ kết thúc khi gặp lệnh `.exit`.  
 - Dữ liệu sau khi INSERT không bị mất đi khi kết thúc chương trình.  
 - Chương trình chạy không xảy ra memory leak.
