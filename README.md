@@ -23,8 +23,8 @@ In this example, the `exql` program will read the `data.csv` file and execute th
 
 To make it easier, we can assume that CSV files is always a table `M`x`N + 1`, with the first row contains column names, `M` is number of columns and `N` rows of data. All column names have [`snake_case`](https://en.wikipedia.org/wiki/Snake_case) format. For instance:
 
-| id | first_name | last_name | age | major
-|---|---|---|--|
+| id | first_name | last_name | age | major |
+|---|---|---|--|--|
 | #1 | Vinh | Nguyen Phuc | 22 | Computer Science |
 | #2 | Quan | Nguyen Hong | 20 | Computer Engineering |
 | #1 | Phu  | Nguyen Ngoc | 20 | Mechanical Engineering |
