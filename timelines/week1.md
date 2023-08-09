@@ -3,7 +3,7 @@
 ## Goals
 
 1. Set up working environment
-  - Install [Ubuntu](https://ubuntu.com/) (recommend versin >= 22.04) or other Linux distributions as your OS 
+  - Install [Ubuntu](https://ubuntu.com/) (recommend version >= 22.04) or other Linux distributions as your OS 
   - `gcc/g++` v11.4.0
   - `git` latest version
   - Create Github account
