@@ -33,4 +33,7 @@ WHERE <condition> [(OR | AND) <condition>]
 ORDER BY column_name [ASC | DESC];
 ```
 
-`<condition>` have syntax rule as follows: `<col_name> (= | > | < | LIKE) <value>` 
+## Other syntax rules
+
+- `<condition>` have syntax rule as follows: `<col_name> (= | > | < | LIKE) <value>` 
+- `<file_name>` must have extension `.csv`
