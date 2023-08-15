@@ -28,12 +28,23 @@ The syntax is as follows:
 
 ```sql
 SELECT [* | column1, column2, ...]
-FROM <file_name>
+FROM (<file_name> | (select_statement))
 WHERE <condition> [(OR | AND) <condition>]
 ORDER BY column_name [ASC | DESC];
 ```
 
+**SELECT** statement also can have nest one as describe above. For instance:
+
+```sql
+SELECT id, name, email, phone FROM (
+  SELECT id, name, email, age, phone
+  FROM member.csv
+  WHERE age > 22
+)
+WHERE name LIKE '%Vinh%'
+```
+
 ## Other syntax rules
 
-- `<condition>` have syntax rule as follows: `<col_name> (= | > | < | LIKE) <value>` 
+- `<condition>` have syntax rule as follows: `<col_name> (= | > | < | >= | <= | LIKE) <value>` 
 - `<file_name>` must have extension `.csv`
