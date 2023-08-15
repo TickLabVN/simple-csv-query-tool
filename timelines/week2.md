@@ -65,7 +65,6 @@ The structure of the query string resembles SQL, which makes it relatively easy 
 
 - Retrieve personnel data from a file named personnel.csv
 - Extract specific attributes: IDs, first names, last names, and emails
-From computer point of view, important information include:
 
 From the computer's perspective, the pertinent details consist of:
 
