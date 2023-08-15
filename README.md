@@ -45,6 +45,8 @@ The executable file `exql` must be:
 - NO MEMORY LEAKS after program exit
 - Pass all test cases
 
+The language description is at [here](./query-language-description.md]).
+
 ## Learning Objectives
 
 Through this challenge, you will:
