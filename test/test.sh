@@ -10,55 +10,62 @@ count_files_in_folder() {
         echo "Error: $folder is not a valid directory."
     fi
 
-    echo "Number of files in $folder: $file_count"
+    echo "$file_count"
 }
 
 run_tests() {
     local arg_folder="$1"
     local expect_folder="$2"
     local command_to_run="$3"
-    
+
     all_passed=true
     passed_test_case=0
     total_test_case=$(count_files_in_folder "$arg_folder")
-    
-    for arg_file in "$arg_folder"/*; do
-        arg_filename=$(basename "$arg_file")
-        expect_file="$expect_folder/$arg_filename"
-    
-        if [ -f "$expect_file" ]; then
-            echo "Comparing $arg_filename"
-            
-            # Run the command with the contents of the argument file
-            output=$("$command_to_run" "$(cat "$arg_file")")
-    
-            # Get the expected output from the expect output file
-            expected_output=$(cat "$expect_file")
-    
-            # Compare the command's output with the expected output
-            if [ "$output" = "$expected_output" ]; then
-                passed_test_case=$((passed_test_case + 1))
-                echo "   Test case $passed_test_case: Okay"
+
+    if [ "$total_test_case" -gt 0 ]; then
+        for arg_file in "$arg_folder"/*; do
+            arg_filename=$(basename "$arg_file")
+            expect_file="$expect_folder/$arg_filename"
+
+            if [ -f "$expect_file" ]; then
+                echo "Comparing $arg_filename"
+
+                # Run the command with the contents of the argument file
+                output=$("$command_to_run" "$(cat "$arg_file")")
+
+                # Get the expected output from the expect output file
+                expected_output=$(cat "$expect_file")
+
+                # Compare the command's output with the expected output
+                if [ "$output" = "$expected_output" ]; then
+                    passed_test_case=$((passed_test_case + 1))
+                    echo "   Test case $passed_test_case: Okay"
+                else
+                    echo "   Test case $((passed_test_case + 1)): Output does not match the expected output:"
+                    echo "   Expected: "
+                    echo "$expected_output"
+                    echo "   Actual:   "
+                    echo "$output"
+                    all_passed=false
+                    break
+                fi
             else
-                echo "   Test case $((passed_test_case + 1)): Output does not match the expected output:"
-                echo "   Expected: "
-                echo "$expected_output"
-                echo "   Actual:   "
-                echo "$output"
+                echo "Expect output file not found for $arg_filename"
                 all_passed=false
-                break
             fi
+        done
+
+        if $all_passed; then
+            echo "All test cases passed!"
+            exit 0
         else
-            echo "Expect output file not found for $arg_filename"
-            all_passed=false
+            echo "Some test cases did not pass."
+            echo "Passed $passed_test_case out of $total_test_case test cases."
+            exit 1
         fi
-    done
-    
-    if $all_passed; then
-        echo "All test cases passed!"
     else
-        echo "Some test cases did not pass."
-        echo "Passed $passed_test_case out of $total_test_case test cases."
+        echo "No test cases found in $arg_folder."
+        exit 1
     fi
 }
 
