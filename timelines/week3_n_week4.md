@@ -163,9 +163,10 @@ graph TD;
 
 With nodes that have name in uppercase format are terminal nodes (contain token data), and nodes that have name in Pascal case are non-terminal node (contain multiple terminal nodes).
 
-<!-- 
 ### Query Command
 
+![Comming soon GIF](https://media.giphy.com/media/4JEGvm7EV3KOsYNAvZ/giphy.gif)
+<!--
 Regarding [query command construction](#constructing-the-query-command), a query command has higher level than parse tree. A parse tree can contain some unnecessary tokens like brackets, `INTO`/`FROM` words, commas, single quotes, ... Your responsible is captures the query's semantics and removes unnecessary syntactic details.
 
 In Lexer phase and Parser phase, you are free to define your own rule. But in this phase, you MUST use these classes to contain query data:
