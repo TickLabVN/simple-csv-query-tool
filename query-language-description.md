@@ -9,7 +9,7 @@ The **INSERT** statement in your language is similar to the native SQL **INSERT*
 It allows you to add new rows of data to a CSV file. The syntax is as follows:
 
 ```sql
-INSERT INTO <file_name> [column1, column2, ...] VALUES (value1, value2, ...);
+INSERT INTO <file_name> [(column1, column2, ...)] VALUES (value1, value2, ...);
 ```
 
 Here's a breakdown of the components:
