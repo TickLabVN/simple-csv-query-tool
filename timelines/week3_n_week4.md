@@ -1,4 +1,4 @@
-# Week 3
+# Week 3 & Week 4
 
 In [week 2](week2.md), we took significant steps by implementing a simple CLI and validating and extracting data from `INSERT` statements.
 
@@ -14,6 +14,7 @@ We can see that the data extracted from an `INSERT` statement could be neatly ca
 
 ```c++
 struct InsertCommand {
+public:
     string filename;
     vector<string> columnNames;
     vector<string> values;
@@ -106,7 +107,7 @@ In the previous Lexer phase, we transformed the raw query string into a sequence
 
 The Parser phase ensures that the sequence of tokens adheres to the grammar rules of our CSV Query Language, constructing a syntactic representation of the query's structure.
 
-Your responsibles:
+**Your responsibles**:
 
 1. **Token Validation**: Check the sequence of tokens to confirm if they adhere to the expected grammar rules. Validate that the tokens form a valid query according to the language's syntax.
 2. **Detect Invalid Sequences**: Detect and report invalid token sequences. If the sequence of tokens doesn't adhere to the language's grammar, generate informative error messages that highlight the issue and potentially its location.
@@ -165,18 +166,116 @@ With nodes that have name in uppercase format are terminal nodes (contain token 
 
 ### Query Command
 
-![Comming soon GIF](https://media.giphy.com/media/4JEGvm7EV3KOsYNAvZ/giphy.gif)
-<!--
-Regarding [query command construction](#constructing-the-query-command), a query command has higher level than parse tree. A parse tree can contain some unnecessary tokens like brackets, `INTO`/`FROM` words, commas, single quotes, ... Your responsible is captures the query's semantics and removes unnecessary syntactic details.
+In the context of query command construction, this phase focuses on elevating the query representation to a higher level than the parse tree. While a parse tree can include syntactic elements like brackets, `INTO`/`FROM` words, commas, single quotes, and other extraneous details, this phase aims to capture the query's semantics and remove unnecessary syntactic details.
 
-In Lexer phase and Parser phase, you are free to define your own rule. But in this phase, you MUST use these classes to contain query data:
+In the previous phases ([Lexer](#lexer-tokenization) and [Parser](#parser-syntactic-analysis)), developers were given the flexibility to define their own rules. However, in this phase, to ensure consistency and uniformity in the output, you **MUST** utilize specific classes for constructing query commands:
 
 ```cpp
-class Command {
-public:
-
-    void print();
+class Expr {
+    virtual string toString() const = 0;
 };
 
-class Insert
-``` -->
+class RelationalExpr : public Expr {
+public:
+    string colName;
+    short int operator;
+    string value;
+public:
+    string toString() const {
+        // TODO
+    }
+};
+
+class LogicalExpr : public Expr {
+public:
+    RelationalExpr* expr1;
+    short int operator;
+    RelationalExpr* expr2;
+public:
+    string toString() const {
+        // TODO
+    }
+};
+
+class SortBy {
+public:
+    string columnName;
+    short int order;
+public:
+    string toString() const {
+        // TODO
+    }
+};
+
+class Command {
+public:
+    virtual string toString() const = 0;
+};
+
+class InsertCommand : public Command {
+public:
+    string filename;
+    vector<string> columnNames;
+    vector<string> values;
+public:
+    string toString() const {
+        // TODO
+    }
+};
+
+class SelectCommand : public Command {
+public:
+    vector<string> columnNames;
+    void* dataSource;
+    Expr* expr;
+    SortBy* sort;
+
+public:
+    string toString() const {
+        // TODO
+    }
+};
+```
+
+To apply testing, `toString` functions are used to stringify a query command. You need to write implementations for them to satisfy [stringify rules](#stringify-a-query-command).
+
+### Stringify a query command
+
+![Comming soon GIF](https://media.giphy.com/media/4JEGvm7EV3KOsYNAvZ/giphy.gif)
+<!-- 
+Stringify rules are defined as follows:
+
+- Insert command:
+    - In case list of column names is empty
+        ```js
+        // Attribute values of an insert command
+        filename: "data.csv"
+        columnNames: []
+        values: ["1", "Hello world"]
+
+        // Will convert to string
+        "[1,hello world]>>data.csv"
+        ```
+    - In case list of column names is specified
+        ```js
+        // Attribute values of an insert command
+        filename: "data.csv"
+        columnNames: ["name", "ID"]
+        values: ["Hello world", "1"]
+
+        // Will convert to string
+        "[hello world,ID]>>data.csv[name,ID]"
+        ```
+- Select command:
+    - In case simple select command:
+        ```js
+        // Attribute values of an insert command
+        datasource: "data.csv"
+        colNames: ["name", "ID"]
+        sortBy:
+            columnName: "name"
+            order: 0
+        
+        // Will convert to string
+        "[name,ID]<<data.csv"
+        ``` -->

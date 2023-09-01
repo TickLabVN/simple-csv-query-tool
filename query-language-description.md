@@ -22,14 +22,14 @@ Here's a breakdown of the components:
 
 The **SELECT** statement in your language resembles the native SQL **SELECT** statement, adapted for CSV file querying. 
 
-While it lacks support for GROUP BY, HAVING, and aggregate functions, it offers other essential features like **WHERE** conditions and **ORDER BY** options.
+While it lacks support for GROUP BY, HAVING, and aggregate functions, it offers other essential features like **WHERE** condition and **ORDER BY** options.
 
 The syntax is as follows:
 
 ```sql
-SELECT [* | column1, column2, ...]
+SELECT [* | (column1, column2, ...)]
 FROM (<file_name> | (select_statement))
-WHERE <condition> [(OR | AND) <condition>]
+WHERE <condition>
 ORDER BY column_name [ASC | DESC];
 ```
 
@@ -44,7 +44,13 @@ SELECT id, name, email, phone FROM (
 WHERE name LIKE '%Vinh%'
 ```
 
-## Other syntax rules
+## `<condition>` syntax rule
 
-- `<condition>` have syntax rule as follows: `<col_name> (= | > | < | >= | <= | LIKE) <value>` 
-- `<file_name>` must have extension `.csv`
+- A `<condition>` can be relational or logical expression.
+
+- A relational expression have syntax rule as follows: `<col_name> (= | > | < | >= | <= | LIKE) <value>`;
+- A logical expression (combination of two or more relational conditions) have syntax rule as follows: `["<relational_condition> [(AND | OR) <relational_condition>]` and can be wrapped by a pair of round brackets.
+
+## Filename Requirements
+
+- `<file_name>` must possess the .csv file extension
