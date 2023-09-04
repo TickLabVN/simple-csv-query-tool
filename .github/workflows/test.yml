@@ -1,0 +1,21 @@
+name: Run Tests on Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  test:
+    name: Run Test Script
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Make File
+        run: make
+
+      - name: Run Test Script
+        run: ./test/test.sh

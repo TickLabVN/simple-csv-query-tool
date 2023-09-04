@@ -1,0 +1,1 @@
+SELECT * WHERE id = '1' FROM data.csv
