@@ -107,7 +107,7 @@ In the previous Lexer phase, we transformed the raw query string into a sequence
 
 The Parser phase ensures that the sequence of tokens adheres to the grammar rules of our CSV Query Language, constructing a syntactic representation of the query's structure.
 
-**Your responsibles**:
+**Your responsibilities**:
 
 1. **Token Validation**: Check the sequence of tokens to confirm if they adhere to the expected grammar rules. Validate that the tokens form a valid query according to the language's syntax.
 2. **Detect Invalid Sequences**: Detect and report invalid token sequences. If the sequence of tokens doesn't adhere to the language's grammar, generate informative error messages that highlight the issue and potentially its location.
@@ -241,8 +241,8 @@ To apply testing, `toString` functions are used to stringify a query command. Yo
 
 ### Stringify a query command
 
-![Comming soon GIF](https://media.giphy.com/media/4JEGvm7EV3KOsYNAvZ/giphy.gif)
-<!-- 
+<!-- ![Comming soon GIF](https://media.giphy.com/media/4JEGvm7EV3KOsYNAvZ/giphy.gif) -->
+
 Stringify rules are defined as follows:
 
 - Insert command:
@@ -278,4 +278,4 @@ Stringify rules are defined as follows:
         
         // Will convert to string
         "[name,ID]<<data.csv"
-        ``` -->
+        ```

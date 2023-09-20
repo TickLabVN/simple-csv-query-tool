@@ -54,3 +54,11 @@ WHERE name LIKE '%Vinh%'
 ## Filename Requirements
 
 - `<file_name>` must possess the .csv file extension
+
+## `<value>`
+
+A `<value>` can be:
+
+- Text: Text is a sequence of characters enclosed in double quotes ("). For example, "This is a text." is a valid text.
+- Number: A number can be an integer or a float. Integers are whole numbers, such as 1, 5, and 100. Floats are numbers that contain a decimal point, such as 3.14, -5.67, and 1.234567e8.
+- Boolean: A boolean value is either true or false.
