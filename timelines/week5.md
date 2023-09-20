@@ -2,7 +2,7 @@
 
 > This week's challenge: Write a program to validate query commands against a file definition.
 
-In previous weeks, we constructed query commands from raw query strings and checked their syntactic rules. However, we did not check whether the query commands were valid for the target CSV file, including whether they violated any constraints.
+In previous weeks, we constructed query commands from raw query strings and checked their syntactic rules. However, we did not check whether the query commands are valid for the target CSV file.
 
 ## File definition
 
